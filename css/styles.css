@@ -1,0 +1,240 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+header a:visited{  /*Para que no se vea violeta por ya haber entrado*/
+    color: #5A3E48;
+}
+ul, ol, li{
+    list-style-type: none;    /* ESTOS TRES SIEMPRE LO PONEMOS AL PRINCIPIO*/
+}
+
+
+body{
+    background-color: #FCE7EF;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    color: #222222;
+}
+
+h2 {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 600;
+}
+
+body, p, span {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+}
+
+.titulo{
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 2.6rem;
+    color: #C95984;
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.tituloResenas{
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #5A3E48;
+    margin-bottom: 1rem;
+}
+
+
+.video{
+    display: flex;
+    justify-content:center;
+    padding: 5px;
+}
+
+.video video{
+    border-radius: 30px; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); 
+}
+
+
+/*Header*/
+.barraInicio{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 10px 20px;  
+    background: linear-gradient(135deg, #F6A2C6, #F7B3CE, #FBD6E4);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+}
+.logo {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 500;
+    letter-spacing: -1px;
+    width: 95px;
+    order: 1;
+}
+.navegador ul{
+    display: flex;
+    gap: 20px;         /* separación entre elementos */
+    list-style: none;  /* saca puntitos */
+    padding: 0;
+    margin: 0;
+}
+.navegador{
+    order: 2;
+}
+
+
+/*cards productos/resenas*/
+button{
+    padding:4px 10px;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    background-color: #EFA3C4;
+    border: none;          
+    border-radius: 25px;
+    cursor:pointer;
+    padding: 12px 22px;
+    color: #ffffff;
+}
+
+button:hover {
+    background-color: #C95984; /* un rosa un poquito más fuerte */
+    transform: translateY(-2px);
+    transition: 0.2s;
+}
+
+i.fa-solid{
+    font-size: 20px;
+    color:#f15292;
+}
+
+.productos{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 20px;
+    gap: 20px;
+}
+
+.productos article{
+    border-radius: 15px;
+    text-align: center;
+    background-color: #F3F3F3;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+    padding: 20px;
+}
+
+.productos article:hover{
+    background-color: #FF8AB8;
+    transform: translateY(-2px);
+    transition: 0.2s;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+    padding:10px;
+}
+
+/*seccion tarjetas*/
+.resenas{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+}
+.resenas h2 {
+    grid-column: 1 / -1; /*para que quede separado de las cards*/
+}
+.card{
+    background-color: #FFFFFF;
+    padding: 15px;
+    flex-basis: 100%;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+
+/*formulario de contacto*/
+#contacto form{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #FBD6E4;
+    border-radius: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style:normal;
+}
+#contacto input, #contacto textarea{
+    padding:10px;
+    margin:10px 0;
+    border-radius: 10px;
+    border:1px solid #FBD6E4;
+}
+#contacto #nombre:focus{
+    transform: translateY(-2px);
+    transition: 0.2s;
+}
+#contacto #email:focus{
+    transform: translateY(-2px);
+    transition: 0.2s;
+}
+#contacto #mensaje:focus{
+    transform: translateY(-2px);
+    transition: 0.2s;
+}
+#contacto button{
+    padding: 15px;
+    background-color: #FF8AB8;
+    color: rgb(0, 0, 0);
+    border:none;
+    border-radius: 10px;
+}
+#contacto #motivo{
+    background-color: #F7A7C4;
+    color: rgb(0, 0, 0);
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style:normal;
+    margin:5px;
+}
+#contacto #motivo:focus{
+    transform: translateY(-2px);
+    transition: 0.2s;
+}
+
+/*media queries*/
+@media(max-width:768px){
+    .resenas{
+    grid-template-columns: 1fr 1fr;
+    }
+    .titulo{
+        font-size: 2.3rem;
+    }
+}
+@media(max-width:480px){
+    .resenas{
+    grid-template-columns: 1fr ;
+    }
+    .titulo{
+        font-size: 1.8rem;
+    }
+}
