@@ -152,11 +152,14 @@ i.fa-solid{
 }
 
 .productos article:hover{
-    background-color: #FF8AB8;
+    background-color: #fd4d9331;
     transform: translateY(-2px);
     transition: 0.2s;
 }
 
+.imgProdu{
+    width: 120px;
+}
 /*Cards resenas*/
 .resenas{
     display: grid;

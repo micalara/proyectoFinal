@@ -13,7 +13,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/styles.css">
     <title>Mi-ki Store</title>
     <link rel="stylesheet" href="./css/styles.css">
@@ -35,42 +37,42 @@
     </header>
 
     <main>
+        <section id="contacto">
+            <form action="https://formspree.io/f/xnnbwrqg" method="POST" autocomplete="off">
+                <fieldset>
+                    <legend>Información Personal</legend>
 
+
+                    <input placeholder="Micaela" type="text" id="nombre" name="nombre">
+
+
+                    <input placeholder="micaelalara@gmail.com" type="email" id="email" name="email" required>
+                </fieldset>
+
+                <fieldset>
+
+                    <label for="motivo">Motivo:</label>
+
+                    <select id="motivo" name="motivo" required>
+                        <option value="">-- Seleccioná una opción --</option>
+                        <option value="consulta">Consulta</option>
+                        <option value="soporte">Soporte</option>
+                        <option value="otros">Otros</option>
+                    </select>
+
+
+                    <textarea id="mensaje" name="mensaje" rows="4" cols="30" required></textarea>
+                </fieldset>
+
+                <section>
+                    <button type="submit" class="botones">Enviar</button>
+                    <button type="reset" class="botones">Limpiar</button>
+                </section>
+            </form>
+        </section>
     </main>
-    
-    <section id="contacto">
-        <form action="https://formspree.io/f/xnnbwrqg" method="POST" autocomplete="off">
-            <fieldset>
-                <legend>Información Personal</legend>
 
-                
-                <input placeholder="Micaela" type="text" id="nombre" name="nombre">
 
-                
-                <input placeholder="micaelalara@gmail.com" type="email" id="email" name="email" required>
-            </fieldset>
-
-            <fieldset>
-                
-                <label for="motivo" >Motivo:</label>
-
-                <select id="motivo" name="motivo" required>
-                    <option value="">-- Seleccioná una opción --</option>
-                    <option value="consulta">Consulta</option>
-                    <option value="soporte">Soporte</option>
-                    <option value="otros">Otros</option>
-                </select>
-
-                
-                <textarea id="mensaje" name="mensaje" rows="4" cols="30" required></textarea>
-            </fieldset>
-
-            <section>
-                <button type="submit" class="botones">Enviar</button>
-                <button type="reset" class="botones">Limpiar</button>
-            </section>
-        </form>
-    </section>
 
     <footer>
         <p>Derechos reservados</p>
