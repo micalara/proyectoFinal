@@ -39,6 +39,26 @@ ul, ol, li{
 .navegador{
     order: 2;
 }
+.registrarse{  /*MODIFICAR, No queda como quiero*/
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;      /* Alinea los textos desde el mismo lugar */
+    margin: auto;            /* Centra el recuadro rosa */
+    padding: 40px 30px;
+    gap:20px;
+    background-color: #FBD6E4;
+    border-radius: 50px;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style:normal;
+    width: fit-content
+}   /*Hacer que el boton este en el centro*/
+
+.botonRegistro{
+    display: flex;
+    align-self: center;
+}
 
 /*Titulos*/
 .titulo{
@@ -62,6 +82,15 @@ h2, a{
     font-size: 1.5rem;
     color: #5A3E48;
     margin-bottom: 1rem;
+}
+
+.produTitulo{
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-size: 2rem;
+    color: #993d5c;
+    margin: 1.5rem 0;
+    margin:20px 15px 0px; 
 }
 
 /*Body*/
@@ -138,17 +167,35 @@ i.fa-solid{
 .productos{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     flex-direction: row;
-    padding: 20px;
+    padding: 15px;
     gap: 20px;
 }
 
 .productos article{
     border-radius: 15px;
     text-align: center;
+    box-sizing: border-box;
     background-color: #F3F3F3;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
-    padding: 20px;
+    padding: 15px;
+    width: 300px;
+}
+
+.infoProdu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8px;
+}
+
+div span{
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    color:#c7004c;
+    padding: 5px;
 }
 
 .productos article:hover{
@@ -160,12 +207,13 @@ i.fa-solid{
 .imgProdu{
     width: 120px;
 }
+
 /*Cards resenas*/
 .resenas{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: flex-start;
-    gap: 45px;
+    gap: 40px;
     padding: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
 }
