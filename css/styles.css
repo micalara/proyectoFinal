@@ -13,56 +13,6 @@ ul, ol, li{
     list-style-type: none;    /* ESTOS TRES SIEMPRE LO PONEMOS AL PRINCIPIO*/
 }
 
-
-body{
-    background-color: #FCE7EF;
-    font-family: "Montserrat Alternates", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
-    color: #222222;
-}
-
-h2 {
-    font-family: "Montserrat Alternates", sans-serif;
-    font-weight: 600;
-}
-
-body, p, span {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-}
-
-.titulo{
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-size: 2.6rem;
-    color: #C95984;
-    text-align: center;
-    margin: 1.5rem 0;
-}
-
-.tituloResenas{
-    font-family: "Montserrat Alternates", sans-serif;
-    font-weight: 600;
-    font-size: 1.5rem;
-    color: #5A3E48;
-    margin-bottom: 1rem;
-}
-
-
-.video{
-    display: flex;
-    justify-content:center;
-    padding: 5px;
-}
-
-.video video{
-    border-radius: 30px; 
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); 
-}
-
-
 /*Header*/
 .barraInicio{
     display: flex;
@@ -90,8 +40,76 @@ body, p, span {
     order: 2;
 }
 
+/*Titulos*/
+.titulo{
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 2.6rem;
+    color: #C95984;
+    text-align: center;
+    margin: 1.5rem 0;
+}
 
-/*cards productos/resenas*/
+h2, a{
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 600;
+    color: #41252f;
+}
+
+.tituloResenas{
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #5A3E48;
+    margin-bottom: 1rem;
+}
+
+/*Body*/
+body{
+    background-color: #FCE7EF;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    color: #222222;
+}
+
+p, span{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: #000000;
+}
+/*Footer*/
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    padding:10px;
+}
+
+.logoFooter {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 500;
+    letter-spacing: -1px;
+    width: 65px;
+    order: 1;
+}
+
+/*Propiedades para el video*/
+.video{
+    display: flex;
+    justify-content:center;
+    padding: 5px;
+}
+
+.video video{
+    border-radius: 30px; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); 
+}
+
+
+/*cards de productos*/
 button{
     padding:4px 10px;
     font-family: "Montserrat", sans-serif;
@@ -139,18 +157,12 @@ i.fa-solid{
     transition: 0.2s;
 }
 
-footer{
-    display: flex;
-    justify-content: center;
-    font-size: 12px;
-    padding:10px;
-}
-
-/*seccion tarjetas*/
+/*Cards resenas*/
 .resenas{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    justify-content: flex-start;
+    gap: 45px;
     padding: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
 }
@@ -164,6 +176,12 @@ footer{
     border-radius: 25px;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transition: transform .4s, box-shadow .4s;
+}
+.card:hover{
+    /*background-color: #f1949465;*/
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.18);
 }
 
 
