@@ -148,6 +148,7 @@ button{
     background-color: #EFA3C4;
     border: none;          
     border-radius: 25px;
+    margin-bottom: 5px;
     cursor:pointer;
     padding: 12px 22px;
     color: #ffffff;
@@ -159,12 +160,13 @@ button:hover {
     transition: 0.2s;
 }
 
-i.fa-solid{
+
+i.fa-solid{ /*logo carrito*/
     font-size: 20px;
     color:#f15292;
 }
 
-.productos{
+#contenedor{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -173,7 +175,9 @@ i.fa-solid{
     gap: 20px;
 }
 
-.productos article{
+.tarjeta{
+    display: flex;
+    flex-direction: column;
     border-radius: 15px;
     text-align: center;
     box-sizing: border-box;
@@ -183,22 +187,7 @@ i.fa-solid{
     width: 300px;
 }
 
-.infoProdu{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 8px;
-}
-
-div span{
-    font-family: "Poppins", sans-serif;
-    font-weight: bold;
-    font-size: 18px;
-    color:#c7004c;
-    padding: 5px;
-}
-
-.productos article:hover{
+.tarjeta:hover{
     background-color: #fd4d9331;
     transform: translateY(-2px);
     transition: 0.2s;
