@@ -1,67 +1,124 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-a{
+
+a {
     text-decoration: none;
 }
-header a:visited{  /*Para que no se vea violeta por ya haber entrado*/
+
+header a:visited {
+    /*Para que no se vea violeta por ya haber entrado*/
     color: #5A3E48;
 }
-ul, ol, li{
-    list-style-type: none;    /* ESTOS TRES SIEMPRE LO PONEMOS AL PRINCIPIO*/
+
+ul,ol,li {
+    list-style-type: none;
+    /* ESTOS TRES SIEMPRE LO PONEMOS AL PRINCIPIO*/
 }
 
-/*Header*/
-.barraInicio{
-    display: flex;
-    justify-content: space-between;
-    align-items: center; 
-    padding: 10px 20px;  
-    background: linear-gradient(135deg, #F6A2C6, #F7B3CE, #FBD6E4);
+
+
+/* HEADER */
+.custom-navbar {
+    background: linear-gradient(90deg, #ff8cc2, #ffb6d9);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
 }
-.logo {
-    font-family: "Montserrat Alternates", sans-serif;
-    font-weight: 500;
-    letter-spacing: -1px;
+
+/* Logo */
+.custom-navbar .logo {
     width: 95px;
-    order: 1;
+    display: block;
 }
-.navegador ul{
-    display: flex;
-    gap: 20px;         /* separación entre elementos */
-    list-style: none;  /* saca puntitos */
-    padding: 0;
-    margin: 0;
+
+/* Links */
+.custom-navbar .nav-link {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 600;
+    color: #b8266f;
+    padding: 8px 12px;
+    transition: 0.2s ease;
+    font-size: 1rem;
 }
-.navegador{
-    order: 2;
+
+.custom-navbar .nav-link:hover {
+    color: #C95984;
+    transform: translateY(-2px);
 }
-.registrarse{  /*MODIFICAR, No queda como quiero*/
+
+/* Ícono carrito */
+.custom-navbar i.fa-solid {
+    font-size: 20px;
+    color: #f15292 !important;
+}
+
+/* Hamburguesa */
+.custom-toggler {
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+.custom-toggler .navbar-toggler-icon {
+    filter: brightness(0) invert(1);
+}
+
+.carritoNav {
+    margin-top: 0 !important;
+}
+
+/* Animación de subrayado para los enlaces del navbar */
+.navMenu .nav-link {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 2px;
+    transition: color 0.25s ease;
+}
+
+/* La línea que aparece al pasar el mouse */
+.navMenu .nav-link::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #d81d84c4;
+    transition: width 0.25s ease;
+}
+
+/* Cuando se pasa el mouse */
+.navMenu .nav-link:hover::before {
+    width: 90%;
+}
+
+.navMenu .nav-link:hover {
+    color: #d81d84;
+}
+
+/*Registro*/
+.registrarse {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;      /* Alinea los textos desde el mismo lugar */
-    margin: auto;            /* Centra el recuadro rosa */
+    align-items: flex-start;
+    margin: auto;
     padding: 40px 30px;
-    gap:20px;
+    gap: 20px;
     background-color: #FBD6E4;
     border-radius: 50px;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;
-    font-style:normal;
+    font-style: normal;
     width: fit-content
-}   /*Hacer que el boton este en el centro*/
+}
 
-.botonRegistro{
+.botonRegistro {
     display: flex;
     align-self: center;
 }
 
 /*Titulos*/
-.titulo{
+.titulo {
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     font-size: 2.6rem;
@@ -70,13 +127,14 @@ ul, ol, li{
     margin: 1.5rem 0;
 }
 
-h2, a{
+h2,
+a {
     font-family: "Montserrat Alternates", sans-serif;
     font-weight: 600;
     color: #41252f;
 }
 
-.tituloResenas{
+.tituloResenas {
     font-family: "Montserrat Alternates", sans-serif;
     font-weight: 600;
     font-size: 1.5rem;
@@ -84,17 +142,17 @@ h2, a{
     margin-bottom: 1rem;
 }
 
-.produTitulo{
+.produTitulo {
     font-family: "Poppins", sans-serif;
     font-weight: 100;
     font-size: 2rem;
     color: #993d5c;
     margin: 1.5rem 0;
-    margin:20px 15px 0px; 
+    margin: 20px 15px 0px;
 }
 
 /*Body*/
-body{
+body {
     background-color: #FCE7EF;
     font-family: "Montserrat Alternates", sans-serif;
     font-optical-sizing: auto;
@@ -103,18 +161,20 @@ body{
     color: #222222;
 }
 
-p, span{
+p,
+span {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
     color: #000000;
 }
+
 /*Footer*/
-footer{
+footer {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 12px;
-    padding:10px;
+    padding: 10px;
 }
 
 .logoFooter {
@@ -126,47 +186,49 @@ footer{
 }
 
 /*Propiedades para el video*/
-.video{
+.video {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     padding: 5px;
 }
 
-.video video{
-    border-radius: 30px; 
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); 
+.video video {
+    border-radius: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 
 /*cards de productos*/
-button{
-    padding:4px 10px;
+button {
+    padding: 4px 10px;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
     background-color: #EFA3C4;
-    border: none;          
+    border: none;
     border-radius: 25px;
     margin-bottom: 5px;
-    cursor:pointer;
+    cursor: pointer;
     padding: 12px 22px;
     color: #ffffff;
 }
 
 button:hover {
-    background-color: #C95984; /* un rosa un poquito más fuerte */
+    background-color: #C95984;
+    /* un rosa un poquito más fuerte */
     transform: translateY(-2px);
     transition: 0.2s;
 }
 
 
-i.fa-solid{ /*logo carrito*/
+i.fa-solid {
+    /*logo carrito*/
     font-size: 20px;
-    color:#f15292;
+    color: #f15292;
 }
 
-#contenedor{
+#contenedor {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -175,9 +237,10 @@ i.fa-solid{ /*logo carrito*/
     gap: 20px;
 }
 
-.tarjeta{
+.tarjeta {
     display: flex;
     flex-direction: column;
+    align-items: center;
     border-radius: 15px;
     text-align: center;
     box-sizing: border-box;
@@ -187,49 +250,129 @@ i.fa-solid{ /*logo carrito*/
     width: 300px;
 }
 
-.tarjeta:hover{
+.tarjeta:hover {
     background-color: #fd4d9331;
     transform: translateY(-2px);
     transition: 0.2s;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
 }
 
-.imgProdu{
+.imgProdu {
     width: 120px;
 }
 
-/*Cards resenas*/
-.resenas{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: flex-start;
-    gap: 40px;
-    padding: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
-}
-.resenas h2 {
-    grid-column: 1 / -1; /*para que quede separado de las cards*/
-}
-.card{
-    background-color: #FFFFFF;
-    padding: 15px;
-    flex-basis: 100%;
-    border-radius: 25px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-    transition: transform .4s, box-shadow .4s;
-}
-.card:hover{
-    /*background-color: #f1949465;*/
-    transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.18);
+.oculto {
+    display: none;
 }
 
+/* Fondo general rosa suave */
+.seccion-resenas {
+    background: linear-gradient(to bottom, #fde7f0, #fbe2ec);
+    padding-bottom: 60px;
+    padding-top: 60px;
+    margin-top:20px;
+}
+
+/* Título */
+.titulo-resenas {
+    color: #c0478c;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Caja del testimonio */
+.caja-resena {
+    background: white;
+    padding: 40px 45px;
+    border-radius: 30px;
+    max-width: 700px;
+    margin: 0 auto;
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.08),
+        0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border-left: 6px solid #f1a2c7;
+}
+
+/* Animación suave */
+.caja-resena:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.12),
+        0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Foto */
+.foto-resena {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid #ffe0f0;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Texto del testimonio */
+.texto-resena {
+    font-size: 1.2rem;
+    color: #5a4a4a;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+/* Nombre */
+.nombre-resena {
+    color: #c0478c;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+/* Rol */
+.rol-resena {
+    color: #86677c;
+    font-size: 0.95rem;
+}
+
+/* Flechas */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 60px;
+    background-color: none;
+}
+
+.carousel-control-prev-icon::after {
+    content: "❮";
+    font-size: 34px;
+    color: #a13e76;
+    background-color: none;
+}
+
+.carousel-control-next-icon::after {
+    content: "❯";
+    font-size: 34px;
+    color: #a13e76;
+    background-color: none;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background: none !important;
+    box-shadow: none !important;
+}
+
+.carousel-indicators button.active {
+    opacity: 1 !important;
+    background-color: #a877a6af !important;
+    height: 5%;
+    width: 10%;
+}
 
 /*formulario de contacto*/
-#contacto form{
+#contacto form {
     display: flex;
     flex-direction: column;
-    justify-content:center;
+    justify-content: center;
     max-width: 400px;
     margin: 20px auto;
     padding: 20px;
@@ -238,56 +381,64 @@ i.fa-solid{ /*logo carrito*/
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;
-    font-style:normal;
+    font-style: normal;
 }
-#contacto input, #contacto textarea{
-    padding:10px;
-    margin:10px 0;
+
+#contacto input,
+#contacto textarea {
+    padding: 10px;
+    margin: 10px 0;
     border-radius: 10px;
-    border:1px solid #FBD6E4;
+    border: 1px solid #FBD6E4;
 }
-#contacto #nombre:focus{
+
+#contacto #nombre:focus {
     transform: translateY(-2px);
     transition: 0.2s;
 }
-#contacto #email:focus{
+
+#contacto #email:focus {
     transform: translateY(-2px);
     transition: 0.2s;
 }
-#contacto #mensaje:focus{
+
+#contacto #mensaje:focus {
     transform: translateY(-2px);
     transition: 0.2s;
 }
-#contacto button{
+
+#contacto button {
     padding: 15px;
     background-color: #FF8AB8;
     color: rgb(0, 0, 0);
-    border:none;
+    border: none;
     border-radius: 10px;
 }
-#contacto #motivo{
+
+#contacto #motivo {
     background-color: #F7A7C4;
     color: rgb(0, 0, 0);
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;
-    font-style:normal;
-    margin:5px;
+    font-style: normal;
+    margin: 5px;
 }
-#contacto #motivo:focus{
+
+#contacto #motivo:focus {
     transform: translateY(-2px);
     transition: 0.2s;
 }
 
-/* ---- HERO SECTION (ACTUALIZADO) ---- */
+/*Bienvenida del home*/
 
 .hero {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 50px 3vw;
-    gap: 50px;                   /* ↓↓↓ MENOS espacio para que no se vaya a la derecha */
-    max-width: 1150px;           /* ↓↓↓ Limita que se estire demasiado */
+    gap: 50px;
+    max-width: 1150px;
     margin: auto;
     animation: fadeSlide 0.8s ease-out;
 }
@@ -298,6 +449,7 @@ i.fa-solid{ /*logo carrito*/
         opacity: 0;
         transform: translateY(25px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -309,10 +461,9 @@ i.fa-solid{ /*logo carrito*/
     max-width: 430px;
 }
 
-/* Jerarquía mejorada */
 .tituloHero {
     font-family: "Poppins", sans-serif;
-    font-size: 1.9rem;           /* ↓↓↓ Más equilibrado */
+    font-size: 1.9rem;
     font-weight: 700;
     color: #C95984;
     margin-bottom: 8px;
@@ -320,7 +471,7 @@ i.fa-solid{ /*logo carrito*/
 
 .subtituloHero {
     font-family: "Montserrat Alternates", sans-serif;
-    font-size: 1.45rem;          /* ↑ Papelería queda más protagonista */
+    font-size: 1.45rem;
     font-weight: 600;
     color: #5f5a5ac5;
     margin-bottom: 32px;
@@ -328,10 +479,10 @@ i.fa-solid{ /*logo carrito*/
 
 /* Frase del día */
 .fraseDelDia {
-    background: #fff7fb;         /* ↑ Más contraste suave */
+    background: #fff7fb;
     padding: 25px 28px;
     border-radius: 20px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
     max-width: 420px;
     border-left: 6px solid #f1a2c7;
     transition: box-shadow 0.25s ease, transform 0.25s ease;
@@ -354,19 +505,234 @@ i.fa-solid{ /*logo carrito*/
     font-family: "Montserrat", sans-serif;
     font-size: 1rem;
     font-weight: 400;
-    color: #333333;          /* ↑ Contraste mucho mejor */
+    color: #333333;
     line-height: 1.45;
 }
 
 /* Video */
 .hero-video video {
-    width: 290px;            /* ↓↓ Un poco más chico */
+    width: 290px;
     border-radius: 25px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* ---------- Responsive ---------- */
+/* Sección categorías */
+.categorias-title {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 700;
+    color: #c94a7c;
+    font-size: 2rem;
+}
+
+/* Tarjetas */
+.categoria-card {
+    display: block;
+    text-align: center;
+    background: linear-gradient(135deg, #ff559c, #f59a7096, #f365a7);
+    border: none;
+    box-shadow: 0 5px 15px rgba(255, 118, 172, 0.4);
+    border-radius: 50%;
+    padding: 25px;
+    width: 230px;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0 auto;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.categoria-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    border-color: #ff9acb;
+}
+
+/* Imagen de categoría */
+.categoria-card img {
+    width: 90px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5%;
+    margin-bottom: 10px;
+    margin-top: 2px;
+    border: 2px solid transparent;
+}
+
+/* Texto */
+.categoria-card p {
+    margin-top: 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: #7a2654;
+    font-size: 1.1rem;
+}
+
+/* Fila de productos con patrón 3 - 2 */
+.fila-productos {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+/* Para que las tarjetas nunca se estiren */
+.fila-productos .tarjeta {
+    width: 300px;
+}
+
+
+/* ==== Contact visual (iconos + texto) ==== */
+.contact-visual {
+  background: linear-gradient(180deg, rgba(255,239,246,0.6), rgba(252,231,239,0.6));
+  border-radius: 18px;
+  padding: 36px;
+  margin: 28px auto;
+}
+
+.contact-visual-inner {
+  display: grid;
+  grid-template-columns: 1fr 420px; 
+  gap: 28px;
+  align-items: start;
+}
+
+/* tarjetas de contacto */
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  gap: 18px;
+}
+
+.contact-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+}
+
+.icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff9acb, #ffb86c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 28px;
+  flex-shrink: 0;
+  box-shadow: 0 6px 18px rgba(255,118,172,0.18);
+}
+
+.contact-card h4 {
+  margin: 0 0 6px 0;
+  font-family: "Montserrat Alternates", sans-serif;
+  color: #b21a64;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.contact-link,
+.contact-text {
+  font-family: "Montserrat", sans-serif;
+  color: #4c303c;
+  font-size: 0.95rem;
+}
+
+.btn-mapa-toggle {
+  margin-top: 8px;
+  background: #ff8ab8;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+/* MAPA (IFRAME) */
+.map-container {
+  width: 100%;
+  min-height: 320px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #ffeef6;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  display: none;  /* oculto hasta que se hace click */
+  margin-top: 20px;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+/* Para que el mapa siempre esté abajo */
+.map-container {
+    grid-column: 1 / -1;
+}
+
+/* Asegura que el mapa quede abajo en mobile */
+@media (max-width: 992px) {
+  .contact-visual-inner {
+    grid-template-columns: 1fr;
+  }
+  .contact-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+  .map-container {
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 520px) {
+  .contact-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/*grid*/
+@media (max-width: 520px) {
+  .contact-cards {
+    grid-template-columns: 1fr;
+  }
+}
+@media(max-width:768px) {
+    .resenas {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .titulo {
+        font-size: 2.3rem;
+    }
+}
+/*resenas*/
+@media(max-width:480px) {
+    .resenas {
+        grid-template-columns: 1fr;
+    }
+
+    .titulo {
+        font-size: 1.8rem;
+    }
+}
+/*bienvenida home*/
 @media(max-width: 900px) {
     .hero {
         flex-direction: column;
@@ -383,22 +749,16 @@ i.fa-solid{ /*logo carrito*/
     }
 }
 
+/* Menú desplegable en móvil */
+@media (max-width: 992px) {
+    .navMenu {
+        gap: 0.2rem;
+    }
 
+    .navMenu .nav-link {
+        padding: 0.4rem 0;
+        text-align: left;
+        font-size: 1.05rem;
+    }
 
-/*media queries*/
-@media(max-width:768px){
-    .resenas{
-    grid-template-columns: 1fr 1fr;
-    }
-    .titulo{
-        font-size: 2.3rem;
-    }
-}
-@media(max-width:480px){
-    .resenas{
-    grid-template-columns: 1fr ;
-    }
-    .titulo{
-        font-size: 1.8rem;
-    }
 }

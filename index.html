@@ -12,30 +12,44 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
-
     <title>Mi-ki Store</title>
-    <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
-    <header class="barraInicio">
+    <header>
+        <nav class="navbar navbar-expand-lg custom-navbar">
+            <div class="container">
 
-        <a href="./index.html">
-            <img class="logo" src="./img/logomiki.png" alt="Store mi-ki logo">
-        </a>
+                <a class="navbar-brand" href="index.html">
+                    <img src="./img/logomiki.png" alt="Mi-ki" class="logo">
+                </a>
 
-        <nav class="navegador">
-            <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./productos.html">Productos</a></li>
-                <li><a href="./contacto.html">Contacto</a></li>
-                <li><a href="./register.html">Registrarse</a></li>
-                <li><a href="./login.html">Login</a></li>
-                <li><a href="./carrito.html" aria-label="abrir carrito"><i class="fa-solid fa-cart-shopping"></i></a>
-                </li>
-            </ul>
+                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto navMenu">
+                        <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./productos.html">Productos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./contacto.html">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./register.html">Registrarse</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./login.html">Login</a></li>
+
+                        <li class="nav-item carritoNav">
+                            <a href="./carrito.html" a class="nav-link"><i class="fa-solid fa-cart-shopping"></i></a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
         </nav>
+
 
     </header>
 
@@ -60,22 +74,167 @@
             </div>
         </section>
 
-        <section class="resenas">
-            <h2 class="tituloResenas">Reseñas</h2>
-            <article class="card">
-                <h3>Card 1</h3>
-                <p>Carta de reseña</p>
-            </article>
+        <section class="categorias-section container py-5">
+            <h2 class="text-center categorias-title mb-4">Explorá nuestras categorías</h2>
 
-            <article class="card">
-                <h3>Card 2</h3>
-                <p>Carta de reseña</p>
-            </article>
+            <div class="row g-4 justify-content-center">
 
-            <article class="card">
-                <h3>Card 3</h3>
-                <p>Carta de reseña</p>
-            </article>
+                <!-- Categoría 1 -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#agendas" class="categoria-card">
+                        <img src="img/produ1.png" alt="Agendas">
+                        <button class="catBtn" data-cat="agendas">
+                            <span>Agendas</span>
+                        </button>
+                    </a>
+                </div>
+
+                <!-- Categoría 2 -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#carpetas" class="categoria-card">
+                        <img src="img/produ2.png" alt="Carpetas">
+                        <button class="catBtn" data-cat="carpetas">
+                            <span>Carpetas</span>
+                        </button>
+                    </a>
+                </div>
+                <!-- Categoría 3 -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#cartucheras" class="categoria-card">
+                        <img src="img/produ3.png" alt="cartucheras">
+                        <button class="catBtn" data-cat="cartucheras">
+                            <span>Cartucheras</span>
+                        </button>
+                    </a>
+                </div>
+                <!-- Categoría 4 -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#mochilas" class="categoria-card">
+                        <img src="img/produ4.png" alt="Mochilas">
+                        <button class="catBtn" data-cat="mochilas">
+                            <span>Mochilas</span>
+                        </button>
+                    </a>
+                </div>
+
+                <!-- Categoría 5 -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#utiles" class="categoria-card">
+                        <img src="img/produ5.png" alt="utiles">
+                        <button class="catBtn" data-cat="utiles">
+                            <span>Útiles</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="reseñas" class="seccion-resenas py-5">
+            <div class="container">
+
+                <!-- TÍTULO -->
+                <h2 class="titulo-resenas text-center mb-4">
+                    Reseñas
+                </h2>
+
+                <!-- CAROUSEL BOOTSTRAP -->
+                <div id="carouselResenas" class="carousel slide" data-bs-ride="carousel">
+
+                    <!-- INDICADORES (puntitos de abajo) -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselResenas" data-bs-slide-to="0"
+                            class="active"></button>
+                        <button type="button" data-bs-target="#carouselResenas" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#carouselResenas" data-bs-slide-to="2"></button>
+                        <button type="button" data-bs-target="#carouselResenas" data-bs-slide-to="3"></button>
+                        <button type="button" data-bs-target="#carouselResenas" data-bs-slide-to="4"></button>
+                        <button type="button" data-bs-target="#carouselResenas" data-bs-slide-to="5"></button>
+                    </div>
+
+                    <!-- CONTENIDO DEL CAROUSEL -->
+                    <div class="carousel-inner">
+
+                        <!-- ===== RESEÑA 1 ===== -->
+                        <div class="carousel-item active">
+                            <div class="caja-resena text-center">
+                                <img src="img/persona1.jpg" class="foto-resena rounded-circle" alt="Foto reseña 1">
+
+                                <p class="texto-resena">“Volveré a comprar, 100% recomendado.”</p>
+                                <h5 class="nombre-resena">— Facundo S.</h5>
+                                <small class="rol-resena">Cliente habitual</small>
+                            </div>
+                        </div>
+
+                        <!-- ===== RESEÑA 2 ===== -->
+                        <div class="carousel-item">
+                            <div class="caja-resena text-center">
+                                <img src="img/persona2.jpg" class="foto-resena rounded-circle" alt="Foto reseña 2">
+
+                                <p class="texto-resena">“Todo es precioso y de excelente calidad ❤️✨”</p>
+                                <h5 class="nombre-resena">— Julieta R.</h5>
+                                <small class="rol-resena">Compradora</small>
+                            </div>
+                        </div>
+
+                        <!-- ===== RESEÑA 3 ===== -->
+                        <div class="carousel-item">
+                            <div class="caja-resena text-center">
+                                <img src="img/persona3.jpg" class="foto-resena rounded-circle" alt="Foto reseña 3">
+
+                                <p class="texto-resena">“Me sorprendió lo rápido que llegó todo. Súper recomendado.”</p>
+                                <h5 class="nombre-resena">— Santiago M.</h5>
+                                <small class="rol-resena">Comprador</small>
+                            </div>
+                        </div>
+
+                        <!-- ===== RESEÑA 4 ===== -->
+                        <div class="carousel-item">
+                            <div class="caja-resena text-center">
+                                <img src="img/persona4.jpg" class="foto-resena rounded-circle" alt="Foto reseña 4">
+
+                                <p class="texto-resena">“Muy buena atención y productos hermosos.”</p>
+                                <h5 class="nombre-resena">— Florencia L.</h5>
+                                <small class="rol-resena">Compradora frecuente</small>
+                            </div>
+                        </div>
+
+                        <!-- ===== RESEÑA 5 ===== -->
+                        <div class="carousel-item">
+                            <div class="caja-resena text-center">
+                                <img src="img/persona5.jpg" class="foto-resena rounded-circle" alt="Foto reseña 5">
+
+                                <p class="texto-resena">“Todo muy prolijo y delicado, se nota el amor que le ponen.”</p>
+                                <h5 class="nombre-resena">— Denise R.</h5>
+                                <small class="rol-resena">Clienta</small>
+                            </div>
+                        </div>
+
+                        <!-- ===== RESEÑA 6 ===== -->
+                        <div class="carousel-item">
+                            <div class="caja-resena text-center">
+                                <img src="img/persona6.jpg" class="foto-resena rounded-circle" alt="Foto reseña 6">
+
+                                <p class="texto-resena">“Los colores, la estética... ¡Me encanta todo! ✨💖”</p>
+                                <h5 class="nombre-resena">— Lara T.</h5>
+                                <small class="rol-resena">Fan del diseño</small>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- CONTROLES (flechas) -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselResenas"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselResenas"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -86,7 +245,8 @@
         <p>&copy; 2025 Todos los derechos reservados</p>
     </footer>
 
-    <script src="js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>

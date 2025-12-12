@@ -1,117 +1,162 @@
-//Defino el array de productos.
 const productos = [
-    { nombre: 'agenda basica 2026', precio: '$5000', detalle: 'Hojas lisas, tapa dura' },
-    { nombre: 'agenda anillada', precio: '$5500', detalle: 'Hojas punteadas, tapa dura, anillado simple' },
-    { nombre: 'carpeta mediana', precio: '$8000', detalle: 'tamanio de X-X, tapa dura' },
-    { nombre: 'anotador rayado', precio: '$3500', detalle: 'Hojas rayadas, tapa blanda' },
-    { nombre: 'anotador cuadriculado', precio: '$3500', detalle: 'Hojas cuadriculadas, tapa blanda' }
-]
+    /* ======================= AGENDAS 2026 (10) ======================= */
+    { id: "1", categoria: "agendas", nombre: "Agenda 2026 kiss rayada", precio: 5800, detalle: "Hojas rayadas, tapa dura plastificada, tamaño A5", img: "img/produ1.png" },
+    { id: "2", categoria: "agendas", nombre: "Agenda 2026 floreada ", precio: 5600, detalle: "Hojas lisas, papel grueso 90g, tapa dura premium", img: "img/produ2.png" },
+    { id: "3", categoria: "agendas", nombre: "Agenda 2026 ondas bullet", precio: 6200, detalle: "Hojas punteadas para bullet journal, cinta marcadora", img: "img/produ3.png" },
+    { id: "4", categoria: "agendas", nombre: "Agenda 2026 corazones", precio: 6000, detalle: "Hojas cuadriculadas, espiral metálico reforzado", img: "img/produ4.png" },
+    { id: "5", categoria: "agendas", nombre: "Agenda 2026 espiral", precio: 6700, detalle: "Diseño floral, hojas rayadas, tapa mate resistente", img: "img/produ5.png" },
+    { id: "6", categoria: "agendas", nombre: "Agenda 2026 minimalista", precio: 7500, detalle: "Formato semanal, hojas lisas gruesas, tapa símil cuero", img: "img/produ6.png" },
+    { id: "7", categoria: "agendas", nombre: "Agenda 2026 peach", precio: 5200, detalle: "Espiral metálico, hojas rayadas básicas, liviana", img: "img/produ7.png" },
+    { id: "8", categoria: "agendas", nombre: "Agenda 2026 floral", precio: 7000, detalle: "Hojas punteadas, ilustraciones mensuales, tapa dura brillante", img: "img/produ8.png" },
+    { id: "9", categoria: "agendas", nombre: "Agenda 2026 cerezas", precio: 4500, detalle: "Tamaño pequeño, hojas lisas, ideal para llevar encima", img: "img/produ9.png" },
+    { id: "10", categoria: "agendas", nombre: "Agenda 2026 flores", precio: 7800, detalle: "Semana a la vista, papel premium, elástico de cierre", img: "img/produ10.png" },
 
-//Capturar el contenedor de productos en el HTML
-const contenedor = document.querySelector('#contenedor');
+    /* ======================= CARPETAS (5) ======================= */
+    { id: "11", categoria: "carpetas", nombre: "Carpeta A4 tapa dura", precio: 3800, detalle: "Cartón rígido, anillos metálicos, diseño clásico", img: "img/carpeta1.png" },
+    { id: "12", categoria: "carpetas", nombre: "Carpeta escolar estampada", precio: 4200, detalle: "Diseños variados, anillos reforzados, tamaño A4", img: "img/carpeta2.png" },
+    { id: "13", categoria: "carpetas", nombre: "Carpeta transparente", precio: 3000, detalle: "Polipropileno translúcido, liviana y flexible", img: "img/carpeta3.png" },
+    { id: "14", categoria: "carpetas", nombre: "Carpeta ejecutiva símil cuero", precio: 5500, detalle: "Tapa símil cuero, anillos metálicos gruesos", img: "img/carpeta4.png" },
+    { id: "15", categoria: "carpetas", nombre: "Carpeta A5 compacta", precio: 3200, detalle: "Formato pequeño, tapa dura plastificada", img: "img/carpeta5.png" },
 
-//Recorrer mi array de productos y crear el div de la tarjeta
-productos.forEach(producto => {
-    const tarjeta = document.createElement('article');
-    tarjeta.classList.add('tarjeta');
+    /* ======================= CARTUCHERAS (5) ======================= */
+    { id: "16", categoria: "cartucheras", nombre: "Cartuchera clásica rectangular", precio: 3500, detalle: "Tela resistente, cierre metálico, tamaño estándar", img: "img/cartuchera1.png" },
+    { id: "17", categoria: "cartucheras", nombre: "Cartuchera triple cierre", precio: 5200, detalle: "Tres compartimientos independientes, gran capacidad", img: "img/cartuchera2.png" },
+    { id: "18", categoria: "cartucheras", nombre: "Cartuchera cilíndrica", precio: 3000, detalle: "Diseño tubular, ideal para lápices largos", img: "img/cartuchera3.png" },
+    { id: "19", categoria: "cartucheras", nombre: "Cartuchera escolar estampada", precio: 3800, detalle: "Estampados coloridos, cierre reforzado", img: "img/cartuchera4.png" },
+    { id: "20", categoria: "cartucheras", nombre: "Cartuchera premium rígida", precio: 6000, detalle: "Estructura rígida, interior acolchonado", img: "img/cartuchera5.png" },
 
-    //crear el elemento h3 para el nombre del producto
-    const nombreProducto = document.createElement('h3');
-    nombreProducto.textContent = producto.nombre;
+    /* ======================= MOCHILAS (5) ======================= */
+    { id: "21", categoria: "mochilas", nombre: "Mochila escolar básica", precio: 9500, detalle: "Un compartimiento grande, bolsillo frontal", img: "img/mochila1.png" },
+    { id: "22", categoria: "mochilas", nombre: "Mochila reforzada", precio: 12500, detalle: "Costuras reforzadas, espalda acolchonada", img: "img/mochila2.png" },
+    { id: "23", categoria: "mochilas", nombre: "Mochila estampada juvenil", precio: 13800, detalle: "Diseños modernos, varios compartimientos", img: "img/mochila3.png" },
+    { id: "24", categoria: "mochilas", nombre: "Mochila premium símil cuero", precio: 16500, detalle: "Material símil cuero lavable, bolsillos internos", img: "img/mochila4.png" },
+    { id: "25", categoria: "mochilas", nombre: "Mochila doble cierre grande", precio: 15000, detalle: "Gran capacidad, doble cierre reforzado", img: "img/mochila5.png" },
 
-    //crear el elemento p para el precio del producto
-    const precioProducto = document.createElement('p');
-    precioProducto.textContent = producto.precio;
+    /* ======================= ÚTILES BÁSICOS (5) ======================= */
+    { id: "26", categoria: "utiles", nombre: "Lápiz negro HB", precio: 600, detalle: "Madera premium, mina resistente", img: "img/lapiz1.png" },
+    { id: "27", categoria: "utiles", nombre: "Birome azul clásica", precio: 700, detalle: "Tinta azul fluida, punta fina", img: "img/birome1.png" },
+    { id: "28", categoria: "utiles", nombre: "Regla 20 cm transparente", precio: 900, detalle: "Plástico rígido translúcido", img: "img/regla1.png" },
+    { id: "29", categoria: "utiles", nombre: "Tijera escolar", precio: 1500, detalle: "Puntas redondeadas, mango plástico", img: "img/tijera1.png" },
+    { id: "30", categoria: "utiles", nombre: "Goma de borrar blanca", precio: 500, detalle: "Goma suave, no deja manchas", img: "img/goma1.png" }
+];
 
-    //Crear el botonDetalle para ver el detalle
-    const botonDetalle = document.createElement('button');
-    botonDetalle.textContent = 'ver detalle';
-    botonDetalle.classList.add('botonProdu');
+function filtrarPorCategoria(lista, categoria) {
+    if (!categoria) return lista;
+    return lista.filter(p => p.categoria === categoria);
+}
 
-    //Crear el botonDetalle para agregar al carrito
-    const botonComprar = document.createElement('button');
-    botonComprar.textContent = 'Agregar al carrito';
-    botonComprar.classList.add('botonAddCarrito');
+const CART_KEY = "carrito";
 
-    //evento para mostrar u ocultar el detalle
-    botonDetalle.addEventListener('click', () => {
-        //Buscar si ya existe el parrafo de detalle
-        const detalleExistente = tarjeta.querySelector('span');
+function loadCart() {
+    return JSON.parse(localStorage.getItem(CART_KEY)) || [];
+}
 
-        if (!detalleExistente) {
-            const detalle = document.createElement('span');
-            detalle.textContent = producto.detalle;
-            tarjeta.insertBefore(detalle, botonDetalle);
-            //tarjeta.appendChild(detalle);
-            botonDetalle.textContent = 'ocultar detalle'; //cambia el texto del botonDetalle
-        } else {
-            //Si ya existe, lo eliminamos(ocultamos)
-            detalleExistente.remove();
-            botonDetalle.textContent = 'ver detalle'; //restaura la vista sin detalle
-        }
-    });
+function saveCart(cart) {
+    localStorage.setItem(CART_KEY, JSON.stringify(cart));
+}
 
-    botonComprar.addEventListener('click', () => {
+function formatPrecio(n) {
+    return "$" + n.toString();
+}
 
-        // Obtiene el carrito o lo crea vacío
-        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+function addToCart(productId) {
+    const cart = loadCart();
+    const prod = productos.find(p => p.id === productId);
+    if (!prod) return;
 
-        // Agrega el producto actual
-        carrito.push({
-            nombre: producto.nombre,
-            precio: producto.precio
+    const existing = cart.find(item => item.id === productId);
+    if (existing) {
+        existing.cantidad += 1;
+    } else {
+        cart.push({
+            id: prod.id,
+            nombre: prod.nombre,
+            precio: prod.precio,
+            cantidad: 1,
+            img: prod.img || ""
         });
-
-        // Guarda el carrito actualizado
-        localStorage.setItem("carrito", JSON.stringify(carrito));
-
-        // Actualiza la vista del carrito
-        actualizarCarrito();
-    });
-
-
-    //Ahora tengo que agregar el nombre y precio al div de la tarjeta
-    tarjeta.appendChild(nombreProducto);
-    tarjeta.appendChild(precioProducto);
-    tarjeta.appendChild(botonDetalle);
-    tarjeta.appendChild(botonComprar);
-
-    //Insertar la tarjeta en el contenedor de productos
-    contenedor.appendChild(tarjeta);
-});
-
-
-//CARRITO
-document.addEventListener("DOMContentLoaded", () => {
-    actualizarCarrito();
-});
-
-function actualizarCarrito() {
-    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-    const listaCarrito = document.getElementById("lista-carrito");
-
-    // Si no existe el ul no hace nada
-    if (!listaCarrito) return;
-
-    listaCarrito.innerHTML = "";
-
-    if (carrito.length === 0) {
-        const li = document.createElement("li");
-        li.textContent = "El carrito está vacío.";
-        listaCarrito.appendChild(li);
-        return;
     }
 
-    carrito.forEach(producto => {
-        const li = document.createElement("li");
-        li.textContent = `${producto.nombre} - ${producto.precio}`;
-        listaCarrito.appendChild(li);
+    saveCart(cart);
+}
+
+function aplicarOrdenEspecial(lista) {
+    if (lista.length <= 5) return lista;
+
+    const arriba = lista.slice(0, 3);
+    const abajo = lista.slice(3, 5);
+    const resto = lista.slice(5);
+
+    return [...arriba, ...abajo, ...resto];
+}
+
+/*renderizar productos*/
+function renderProducts(listaOriginal) {
+    const cont = document.getElementById("contenedor");
+    if (!cont) return;
+
+    // 👉 aplicar orden especial
+    const lista = aplicarOrdenEspecial(listaOriginal);
+
+    let html = "";
+    lista.forEach(p => {
+        html += `
+        <article class="tarjeta" data-id="${p.id}">
+            <img class="imgProdu" src="${p.img}" alt="${p.nombre}" onerror="this.style.display='none'">
+            <h3>${p.nombre}</h3>
+            <p style="font-weight:600; margin:6px 0;">${formatPrecio(p.precio)}</p>
+            <p class="detalle oculto" style="font-size:0.9rem; color:#666; margin-bottom:12px;">${p.detalle}</p>
+            <button type="button" class="btn-detalle" data-id="${p.id}">ver detalle</button>
+            <button type="button" class="btn-add" data-id="${p.id}">Agregar al carrito</button>
+        </article>
+        `;
+    });
+
+    cont.innerHTML = html;
+
+    cont.querySelectorAll(".btn-add").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const id = btn.getAttribute("data-id");
+            addToCart(id);
+            const original = btn.textContent;
+            btn.textContent = "Agregado ✓";
+            setTimeout(() => btn.textContent = original, 900);
+        });
+    });
+
+    cont.querySelectorAll(".btn-detalle").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const card = btn.closest(".tarjeta");
+            const parrafo = card.querySelector(".detalle");
+            const oculto = parrafo.classList.contains("oculto");
+
+            if (oculto) {
+                parrafo.classList.remove("oculto");
+                btn.textContent = "ocultar detalle";
+            } else {
+                parrafo.classList.add("oculto");
+                btn.textContent = "ver detalle";
+            }
+        });
     });
 }
 
+function vaciarCarrito() {
+    localStorage.removeItem(CART_KEY);
+}
 
-//Vaciar carrito
-document.getElementById("vaciar-carrito")?.addEventListener("click", function () {
-    localStorage.removeItem("carrito");
-    actualizarCarrito();
+document.addEventListener("DOMContentLoaded", () => {
+    const categoria = localStorage.getItem("categoriaSeleccionada");
+    const listaFiltrada = filtrarPorCategoria(productos, categoria);
+    renderProducts(listaFiltrada);
+    localStorage.removeItem("categoriaSeleccionada");
+
+    const vacBtn = document.getElementById("vaciar-carrito");
+    if (vacBtn) {
+        vacBtn.addEventListener("click", () => {
+            if (confirm("¿Vaciar carrito?")) {
+                vaciarCarrito();
+            }
+        });
+    }
 });
