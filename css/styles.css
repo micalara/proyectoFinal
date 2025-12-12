@@ -279,6 +279,112 @@ i.fa-solid{ /*logo carrito*/
     transition: 0.2s;
 }
 
+/* ---- HERO SECTION (ACTUALIZADO) ---- */
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 3vw;
+    gap: 50px;                   /* ↓↓↓ MENOS espacio para que no se vaya a la derecha */
+    max-width: 1150px;           /* ↓↓↓ Limita que se estire demasiado */
+    margin: auto;
+    animation: fadeSlide 0.8s ease-out;
+}
+
+/* Animación suave */
+@keyframes fadeSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-texto {
+    flex: 1;
+    max-width: 430px;
+}
+
+/* Jerarquía mejorada */
+.tituloHero {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.9rem;           /* ↓↓↓ Más equilibrado */
+    font-weight: 700;
+    color: #C95984;
+    margin-bottom: 8px;
+}
+
+.subtituloHero {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 1.45rem;          /* ↑ Papelería queda más protagonista */
+    font-weight: 600;
+    color: #5f5a5ac5;
+    margin-bottom: 32px;
+}
+
+/* Frase del día */
+.fraseDelDia {
+    background: #fff7fb;         /* ↑ Más contraste suave */
+    padding: 25px 28px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+    max-width: 420px;
+    border-left: 6px solid #f1a2c7;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.fraseDelDia:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 16px rgba(247, 135, 184, 0.38);
+}
+
+.fraseDelDia h2 {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 1.22rem;
+    font-weight: 600;
+    color: #c14d78;
+    margin-bottom: 10px;
+}
+
+#fraseTexto {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #333333;          /* ↑ Contraste mucho mejor */
+    line-height: 1.45;
+}
+
+/* Video */
+.hero-video video {
+    width: 290px;            /* ↓↓ Un poco más chico */
+    border-radius: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ---------- Responsive ---------- */
+@media(max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 35px;
+    }
+
+    .hero-video video {
+        width: 250px;
+    }
+
+    .fraseDelDia {
+        margin: 0 auto;
+    }
+}
+
+
+
 /*media queries*/
 @media(max-width:768px){
     .resenas{
