@@ -1,32 +1,31 @@
-const form = document.getElementById("loginForm");
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("loginForm");
 
-form.addEventListener("submit", function (e) {
-    e.preventDefault();
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
 
-    const correo = document.getElementById("correo").value.trim();
-    const pass = document.getElementById("pass").value.trim();
+        const correo = document.getElementById("correo").value.trim();
+        const pass = document.getElementById("pass").value.trim();
 
-    // Traemos el usuario guardado
-    const usuarioGuardado = JSON.parse(localStorage.getItem("usuario"));
+        const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-    if (!usuarioGuardado) {
-        alert("No hay usuarios registrados");
-        return;
-    }
+        const usuario = usuarios.find(
+            user => user.email === correo && user.password === pass
+        );
 
-    // Validamos datos
-    if (
-        correo === usuarioGuardado.correo &&
-        pass === usuarioGuardado.pass
-    ) {
-        alert("Inicio de sesión exitoso");
+        if (!usuario) {
+            alert("Correo o contraseña incorrectos");
+            return;
+        }
 
-        // Guardamos estado de sesión
-        localStorage.setItem("logueado", "true");
+        // Guardamos sesión activa
+        localStorage.setItem("usuarioLogueado", JSON.stringify({
+            nombre: usuario.nombre,
+            email: usuario.email
+        }));
 
-        // Redirigir
+        alert(`Bienvenida/o ${usuario.nombre} 💖`);
+
         window.location.href = "index.html";
-    } else {
-        alert("Correo o contraseña incorrectos");
-    }
+    });
 });

@@ -129,3 +129,4 @@ document.addEventListener("DOMContentLoaded", () => {
   const vacBtn = document.getElementById("vaciar-carrito");
   if (vacBtn) vacBtn.addEventListener("click", vaciarCarritoPage);
 });
+

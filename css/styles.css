@@ -847,6 +847,52 @@ i.fa-solid {
   color: #ff6fa8;
 }
 
+.saludo-usuario {
+    font-weight: 600;
+    color: #b21a64;
+    cursor: default;
+}
+
+.carritoNav {
+    margin-left: 5px;
+}
+/* === Dropdown usuario personalizado === */
+
+.navbar .saludo-usuario {
+    color: #b21a64 !important;
+    font-weight: 700;
+}
+
+.navbar .saludo-usuario:hover,
+.navbar .saludo-usuario:focus {
+    color: #ff5fa2 !important;
+}
+
+/* contenedor dropdown */
+.navbar .dropdown-menu {
+    background: linear-gradient(180deg, #fff0f7, #ffe3ef);
+    border: none;
+    border-radius: 16px;
+    padding: 10px;
+    min-width: 180px;
+    box-shadow: 0 12px 28px rgba(178, 26, 100, 0.18);
+}
+
+/* ítems */
+.navbar .dropdown-item {
+    border-radius: 12px;
+    font-weight: 600;
+    color: #7a1f4a;
+    padding: 10px 14px;
+}
+
+.navbar .dropdown-item:hover {
+    background: #ffb7d2;
+    color: #4c102b;
+}
+
+
+
 /* Responsive */
 @media (max-width: 768px) {
   .contact-redes {
