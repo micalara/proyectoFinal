@@ -39,3 +39,39 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+document.addEventListener("DOMContentLoaded", () => {
+
+  const loginCanvas = document.getElementById("offcanvasLogin");
+  const registerCanvas = document.getElementById("offcanvasRegister");
+
+  if (!loginCanvas || !registerCanvas) return;
+
+  const loginInstance = bootstrap.Offcanvas.getOrCreateInstance(loginCanvas);
+  const registerInstance = bootstrap.Offcanvas.getOrCreateInstance(registerCanvas);
+
+  const abrirRegistro = document.getElementById("abrirRegistro");
+  const abrirLogin = document.getElementById("abrirLogin");
+
+  if (abrirRegistro) {
+    abrirRegistro.addEventListener("click", (e) => {
+      e.preventDefault();
+      loginInstance.hide();
+
+      setTimeout(() => {
+        registerInstance.show();
+      }, 300);
+    });
+  }
+
+  if (abrirLogin) {
+    abrirLogin.addEventListener("click", (e) => {
+      e.preventDefault();
+      registerInstance.hide();
+
+      setTimeout(() => {
+        loginInstance.show();
+      }, 300);
+    });
+  }
+
+});

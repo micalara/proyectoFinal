@@ -125,8 +125,24 @@ function vaciarCarritoPage() {
 
 //DOM ready
 document.addEventListener("DOMContentLoaded", () => {
+
+  // ✅ CONTROL DE SESIÓN (VA PRIMERO)
+  const usuarioLogueado = localStorage.getItem("usuarioLogueado");
+
+  if (!usuarioLogueado) {
+  alert("Tenés que iniciar sesión para ver el carrito");
+  window.location.href = "entrar.html";
+  return;
+}
+
+
+  // ✅ SI HAY SESIÓN, SEGUIMOS NORMAL
   renderCartPage();
+
   const vacBtn = document.getElementById("vaciar-carrito");
-  if (vacBtn) vacBtn.addEventListener("click", vaciarCarritoPage);
+  if (vacBtn) {
+    vacBtn.addEventListener("click", vaciarCarritoPage);
+  }
 });
+
 

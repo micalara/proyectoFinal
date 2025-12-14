@@ -18,14 +18,14 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // Guardamos sesión activa
         localStorage.setItem("usuarioLogueado", JSON.stringify({
             nombre: usuario.nombre,
             email: usuario.email
         }));
 
         alert(`Bienvenida/o ${usuario.nombre} 💖`);
+        window.location.replace("index.html");
 
-        window.location.href = "index.html";
     });
 });
+

@@ -41,12 +41,19 @@
                         <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="./productos.html">Productos</a></li>
                         <li class="nav-item"><a class="nav-link" href="./contacto.html">Contacto</a></li>
-                        <li class="nav-item" id="navRegistrarse"><a class="nav-link" href="./registrarse.html">Registrarse</a></li>
-                        <li class="nav-item" id="navEntrar"><a class="nav-link" href="./entrar.html">Entrar</a></li>
+                        <li class="nav-item" id="navRegistrarse"><a class="nav-link" href="#" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasRegister">
+                                Registrarse
+                            </a>
+                        </li>
+                        <li class="nav-item" id="navEntrar"><a class="nav-link" href="#" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasLogin">
+                                Entrar
+                            </a>
+                        </li>
                         <li class="nav-item carritoNav" id="navCarrito">
                             <a href="./carrito.html" a class="nav-link"><i class="fa-solid fa-cart-shopping"></i></a>
                         </li>
-
                     </ul>
                 </div>
 
@@ -56,7 +63,7 @@
 
     </header>
 
-    <main>
+    <main class="auth-wrapper">
         <form id="loginForm" class="registrarse" autocomplete="off">
     <div class="user">
         <label>Email:</label>
@@ -73,12 +80,34 @@
 
     </main>
 
-
-
-    <footer>
+    <footer class="footer">
         <a href="./index.html">
             <img class="logoFooter" src="./img/logomiki.png" alt="Store mi-ki logo">
         </a>
+
+        <!-- Navegación footer -->
+        <nav class="footer-nav">
+            <a href="./index.html">Inicio</a>
+            <a href="./productos.html">Productos</a>
+            <a href="./contacto.html">Contacto</a>
+        </nav>
+
+        <!-- Redes -->
+        <div class="footer-socials">
+            <a href="https://wa.me/5491123456789" target="_blank" aria-label="WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="https://instagram.com/tuusuario" target="_blank" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://facebook.com/tuusuario" target="_blank" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="mailto:micaela.engene@gmail.com" aria-label="Email">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+        </div>
+
         <p>&copy; 2025 Todos los derechos reservados</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
