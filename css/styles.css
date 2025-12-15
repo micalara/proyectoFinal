@@ -1095,7 +1095,7 @@ i.fa-solid {
 }
 
 /* MOBILE */
-@media (max-width: 600px) {
+@media (max-width: 500px) {
     .categorias-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
