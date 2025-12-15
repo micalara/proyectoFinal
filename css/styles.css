@@ -1095,21 +1095,23 @@ i.fa-solid {
 }
 
 /* MOBILE */
-@media (max-width: 500px) {
+/* MOBILE – forzar 2 columnas */
+@media (max-width: 640px) {
     .categorias-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        width: 100%;
         max-width: 100%;
+        padding: 0 12px;
     }
 
     .categoria-card {
         width: 100%;
-        max-width: 170px;
-        height: 170px;
+        height: 160px;
     }
 
     .categoria-card img {
-        width: 70px;
+        width: 65px;
         height: auto;
     }
 }
