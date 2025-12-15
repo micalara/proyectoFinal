@@ -116,13 +116,24 @@ function renderProducts(listaOriginal) {
 
     cont.querySelectorAll(".btn-add").forEach(btn => {
         btn.addEventListener("click", () => {
+            const usuarioLogueado = localStorage.getItem("usuarioLogueado");
+
+            // 🚫 SI NO HAY SESIÓN
+            if (!usuarioLogueado) {
+                alert("Tenés que iniciar sesión para agregar productos al carrito 💖");
+                return;
+            }
+
+            // ✅ SI HAY SESIÓN
             const id = btn.getAttribute("data-id");
             addToCart(id);
+
             const original = btn.textContent;
             btn.textContent = "Agregado ✓";
             setTimeout(() => btn.textContent = original, 900);
         });
     });
+
 
     cont.querySelectorAll(".btn-detalle").forEach(btn => {
         btn.addEventListener("click", () => {
