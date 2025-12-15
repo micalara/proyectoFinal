@@ -20,6 +20,10 @@ li {
     /* ESTOS TRES SIEMPRE LO PONEMOS AL PRINCIPIO*/
 }
 
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
 /* HEADER */
 .custom-navbar {
     background: linear-gradient(90deg, #ff8cc2, #ffb6d9);
@@ -79,6 +83,7 @@ li {
 .carritoNav {
     margin-top: 0 !important;
 }
+
 /* fin header */
 
 /* BODY */
@@ -97,6 +102,7 @@ span {
     font-weight: 400;
     color: #000000;
 }
+
 /* fin body */
 
 
@@ -128,7 +134,7 @@ footer {
     display: flex;
     justify-content: center;
     gap: 18px;
-    margin: 16px 0;
+    margin-bottom: 15px;
 }
 
 .footer-socials a {
@@ -153,7 +159,7 @@ footer {
 .footer-nav {
     display: flex;
     justify-content: center;
-    gap: 28px;
+    gap: 10px;
     margin: 16px 0;
 }
 
@@ -175,6 +181,7 @@ footer {
     font-size: 0.85rem;
     color: #7a4a5a;
 }
+
 /* fin footer */
 
 /* VIDEO */
@@ -188,6 +195,7 @@ footer {
     border-radius: 30px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
+
 /* fin video */
 
 
@@ -202,7 +210,7 @@ footer {
 
 /* Título de la sección */
 .titulo-resenas {
-    color: #c0478c;
+    color: #C95984;
     font-weight: 700;
     font-size: 2rem;
     margin-bottom: 20px;
@@ -362,6 +370,7 @@ i.fa-solid {
     height: 5%;
     width: 10%;
 }
+
 /* fin resenas */
 
 
@@ -468,7 +477,7 @@ i.fa-solid {
     font-family: "Montserrat Alternates", sans-serif;
     font-size: 1.45rem;
     font-weight: 600;
-    color: #5f5a5ac5;
+    color: #474040c5;
     margin-bottom: 32px;
 }
 
@@ -513,75 +522,60 @@ i.fa-solid {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 /* fin home */
 
-/* CATEGORIAS */
-/* Título de la sección */
-.categorias-title {
-    font-family: "Montserrat Alternates", sans-serif;
-    font-weight: 700;
-    font-size: 2rem;
-    color: #c94a7c;
-}
 
-/* Fila de categorías / productos */
-.fila-productos {
-    display: flex;
-    justify-content: center;
-    gap: 22px;
-    width: 100%;
-    margin-bottom: 25px;
-}
-
-/* Tarjeta de categoría */
-.categoria-card {
-    background: linear-gradient(135deg, #ff559c, #f59a7096, #f365a7);
-    box-shadow: 0 5px 15px rgba(255, 118, 172, 0.4);
-    border: none;
-    border-radius: 50%;
-    width: 230px;
-    height: 230px;
-    padding: 25px;
+/* tarjeta categoria */
+.categorias-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 32px;
+    max-width: 1100px;
     margin: 0 auto;
+    justify-items: center;
+}
+
+/* tarjeta */
+.categoria-card {
+    width: 200px;
+    height: 230px;
+    background: linear-gradient(180deg, #fff5fa, #fde7f1);
+    border-radius: 28px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    overflow: hidden;
+    justify-content: center;
     text-align: center;
+    text-decoration: none;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+/* hover */
 .categoria-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-    border-color: #ff9acb;
+    box-shadow: 0 14px 32px rgba(201, 89, 132, 0.25);
 }
 
-/* Imagen de la categoría */
+/* imagen */
 .categoria-card img {
-    width: 90px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 5%;
-    margin-top: 2px;
-    margin-bottom: 10px;
-    border: 2px solid transparent;
+    width: 85px;
+    height: auto;
+    margin-bottom: 14px;
 }
 
-/* Texto de la categoría */
-.categoria-card p {
-    margin-top: 10px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: #7a2654;
+/* texto */
+.categoria-card span {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #b21a64;
 }
-
-/* Ajuste para tarjetas dentro de la fila */
-.fila-productos .tarjeta {
-    width: 300px;
+.tituloCategoria{
+    color: #C95984;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
 /* fin categorias */
@@ -1081,5 +1075,42 @@ i.fa-solid {
         font-size: 1.8rem;
     }
 }
+
+/*categorias*/
+/* TABLET */
+@media (max-width: 992px) {
+    .categorias-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+        max-width: 800px;
+    }
+}
+/* MOBILE */
+@media (max-width: 576px) {
+    .categorias-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        max-width: 360px;
+    }
+
+    .categoria-card {
+        width: 100%;
+        max-width: 160px;
+        height: 160px;
+    }
+
+    .categoria-card img {
+        width: 70px;
+        height: auto;
+    }
+}
+@media (max-width: 360px) {
+    .categorias-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* fin categorias responsive */
 
 /* fin responsive */
