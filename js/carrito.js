@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!usuarioLogueado) {
   alert("Tenés que iniciar sesión para ver el carrito");
-  window.location.href = "entrar.html";
+  window.location.href = "index.html";
   return;
 }
 

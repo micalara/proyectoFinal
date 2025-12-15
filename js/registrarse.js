@@ -32,6 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         alert(`¡Bienvenida/o ${nombre}! 💖 Ahora podés iniciar sesión`);
 
-        window.location.href = "entrar.html";
+        window.location.href = "index.html";
     });
 });
