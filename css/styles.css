@@ -1076,27 +1076,36 @@ i.fa-solid {
     }
 }
 
-/*categorias*/
+/* ======================
+   CATEGORÍAS – RESPONSIVE
+   ====================== */
+
 /* TABLET */
 @media (max-width: 992px) {
     .categorias-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 28px;
-        max-width: 800px;
+        max-width: 900px;
+    }
+
+    .categoria-card {
+        width: 200px;
+        height: 200px;
     }
 }
+
 /* MOBILE */
 @media (max-width: 576px) {
     .categorias-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
-        max-width: 360px;
+        max-width: 100%;
     }
 
     .categoria-card {
         width: 100%;
-        max-width: 160px;
-        height: 160px;
+        max-width: 170px;
+        height: 170px;
     }
 
     .categoria-card img {
@@ -1104,13 +1113,15 @@ i.fa-solid {
         height: auto;
     }
 }
+
+/* MOBILE MUY CHICO */
 @media (max-width: 360px) {
     .categorias-grid {
         grid-template-columns: 1fr;
     }
+
+    .categoria-card {
+        max-width: 220px;
+    }
 }
-
-
-/* fin categorias responsive */
-
 /* fin responsive */
