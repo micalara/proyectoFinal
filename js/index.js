@@ -35,6 +35,44 @@ function activarBotonesCategorias() {
     });
 }
 
+/* hero typing */
+document.addEventListener("DOMContentLoaded", () => {
+
+    const text = "Bienvenid@ a mi-ki";
+    const speed = 65;
+    const delay = 1000;
+
+    const textElement = document.getElementById("type-text");
+
+    let index = 0;
+    let isDeleting = false;
+
+    function typeEffect() {
+
+        if (!isDeleting) {
+            textElement.textContent = text.substring(0, index + 1);
+            index++;
+
+            if (index === text.length) {
+                setTimeout(() => isDeleting = true, delay);
+            }
+
+        } else {
+            textElement.textContent = text.substring(0, index - 1);
+            index--;
+
+            if (index === 0) {
+                isDeleting = false;
+            }
+        }
+
+        setTimeout(typeEffect, isDeleting ? speed / 1.4 : speed);
+    }
+
+    typeEffect();
+});
+/* fin hero typing */
+
 
 
 

@@ -158,10 +158,31 @@ function vaciarCarrito() {
 
 document.addEventListener("DOMContentLoaded", () => {
     const categoria = localStorage.getItem("categoriaSeleccionada");
+
+    // filtrar productos
     const listaFiltrada = filtrarPorCategoria(productos, categoria);
     renderProducts(listaFiltrada);
+
+    // marcar botón activo correcto
+    const botones = document.querySelectorAll(".filtro");
+    botones.forEach(btn => {
+        btn.classList.remove("active");
+
+        if (btn.dataset.cat === categoria) {
+            btn.classList.add("active");
+        }
+    });
+
+    // si no hay categoría (entra normal), activar "Todos"
+    if (!categoria) {
+        const btnTodos = document.querySelector('.filtro[data-cat=""]');
+        if (btnTodos) btnTodos.classList.add("active");
+    }
+
+    // limpiar storage UNA sola vez
     localStorage.removeItem("categoriaSeleccionada");
 
+    // botón vaciar carrito
     const vacBtn = document.getElementById("vaciar-carrito");
     if (vacBtn) {
         vacBtn.addEventListener("click", () => {
@@ -170,4 +191,20 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const botones = document.querySelectorAll(".filtro");
+    botones.forEach(btn => {
+        btn.addEventListener("click", () => {
+            // quitar active anterior
+            botones.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            const categoria = btn.dataset.cat;
+            const listaFiltrada = filtrarPorCategoria(productos, categoria);
+            renderProducts(listaFiltrada);
+        });
+    });
 });
